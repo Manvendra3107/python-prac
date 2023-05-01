@@ -1,0 +1,63 @@
+class car : 
+    def __init__(self, make, model, year, color):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
+
+
+    def start_engine(self):
+        print("Engine started.")
+
+    def change_color(self, new_color):
+        self.color = new_color
+        print("color changed to", self.color)
+
+
+my_car = car("Jeep", "meridian", 2023, "black")
+print(my_car.make)
+print(my_car.model)
+print(my_car.year)
+print(my_car.color)
+ 
+my_car.start_engine()
+
+my_car.change_color("blue")
+print(my_car.color)
+
+class ElectricCar(car):
+    def __init__(self, make, model, year, color, range):
+        super().__init__(make, model, year, color)
+        self.range = range
+        
+    def start_engine(self):
+        print("Engine started silently.")
+
+my_electric_car = ElectricCar("volvo", "model s90", 2023, "black", 500)
+print(my_electric_car.make)
+print(my_electric_car.model)
+print(my_electric_car.year)
+print(my_electric_car.color)
+print(my_electric_car.range)
+
+
+my_electric_car.start_engine()
+
+my_electric_car.change_color("white")
+print(my_electric_car.color)
+
+class ElectricCar(car):
+    def __init__(self, make, model, year, color, range):
+        super().__init__(make, model, year, color)
+        self.range = range
+        
+    def start_engine(self):
+        print("Engine started silently.")
+    
+    def charge(self, miles):
+        self.range += miles
+        print("Range increased to", self.range, "miles.")
+
+        my_electric_car.charge(200)
+print(my_electric_car.range)
+
